@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="DeepLinkSample.PromoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TimeZoneConverter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="..\Assets\HolidaySale.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BackButton" Style="{StaticResource NavigationBackButtonNormalStyle}" Click="Back_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="42">Welcome to the Promo Page!<LineBreak></LineBreak>Subscribe for 50% off until December 31st</TextBlock>
+        <Button Margin="20" FontSize="42" Content="Subscribe Now with a 30 day free trial!" Click="Subscribe_Now" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </StackPanel>
+    </Grid>
+</Page>
