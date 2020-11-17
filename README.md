@@ -1,14 +1,19 @@
 # Microsoft Store Sample: DeepLinkSample
 
-Deep Links
-This can be implemented with an app protocol association, protocol handler, and Partner Center engagement notification. Here are the docs: <a href='https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation'>Handle URI activation - UWP applications | Microsoft Docs</a>
+Deep links are a way to navigate to a specific location in an app. Deep links are commonly used to navigate to special offers during marketing campaigns. 
+Deep links can be implemented with an app protocol association and app protocol handler. The offer can be presented to the user using a Partner Center engagement notification. Here are the docs: <a href='https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation'>Handle URI activation - UWP applications | Microsoft Docs</a>
 
-1) Update the manifest to associate a protocol with the application. For example:
+1) Update the manifest to associate a protocol with the application. For example, in Visual Studio:<BR>
+<img src="../readme=img/visualstudioprotocol.png"/><BR>
+
+
+The manifest should have an entry as follows:
 ```xml
 <uap:Extension Category="windows.protocol">
 <uap:Protocol Name="deeplinksample"/>
 </uap:Extension>
 ```
+
 
 2) With the defined protocol, the app can be launched with parameters. In this case promo is set to winterwonderland and the app will navigate to the winter campaign page. 
 For example:
@@ -43,4 +48,3 @@ SKU for Promotions
 2.	Call  storeAppLicense.AddOnLicenses() to get storelicense info of all available addon;
 3.	Call IsActive() function of addon storelicense to check if it is active or not;
 4.	If it is an active storelicense, then the info of this addon is available Such as skuStoreID, expirationDate.
-
